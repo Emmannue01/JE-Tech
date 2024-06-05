@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparación de Celulares</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .file-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .file-label.selected {
+            background-color: #2ecc71;
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reparación de Celulares</h1>
+    </header>
+
+    <main>
+        <section id="booking">
+            <h2>Agenda una Cita para Reparación de Celulares</h2>
+            <p>Por favor, completa el siguiente formulario:</p><br>
+            <form id="booking-form" action="procesar_celulares.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="celular">Celular:</label>
+                    <input type="tel" id="celular" name="celular" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción del problema:</label><br>
+                    <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="foto">Adjuntar fotos del celular:</label>
+                    <input type="file" id="foto1" name="foto1" style="display: none;">
+                    <label for="foto1" class="file-label">Frontal</label>
+
+                    <input type="file" id="foto2" name="foto2" style="display: none;">
+                    <label for="foto2" class="file-label">Trasera</label>
+
+                    <input type="file" id="foto3" name="foto3" style="display: none;">
+                    <label for="foto3" class="file-label">Lateral Izquierdo</label>
+
+                    <input type="file" id="foto4" name="foto4" style="display: none;">
+                    <label for="foto4" class="file-label">Lateral Derecho</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Cotizar reparacion">
+                </div>
+                <input type="hidden" name="form_celulares" value="1">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Reparación de Celulares JE-Tech</p>
+    </footer>
+    <script>
+
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const label = document.querySelector(`label[for="${this.id}"]`);
+                if (this.files.length > 0) {
+                    label.classList.add('selected');
+                } else {
+                    label.classList.remove('selected');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

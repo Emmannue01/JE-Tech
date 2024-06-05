@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento de Computadoras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mantenimiento de Computadoras</h1>
+    </header>
+
+    <main>
+        <section id="booking">
+            <h2>Agenda una Cita para Mantenimiento de Computadoras</h2>
+            <p>Por favor, completa el siguiente formularios:</p><br>
+            <form id="booking-form" action="procesar_computadoras.php" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="celular">Celular:</label>
+                    <input type="tel" id="celular" name="celular" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio requerido:</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="" disabled selected>Selecciona un servicio</option>
+                        <option value="Mantenimiento preventivo">Mantenimiento preventivo</option>
+                        <option value="Reparación de hardware">Reparación de hardware</option>
+                        <option value="Instalación de software">Instalación de software</option>
+                        <option value="Otra resolución de problemas">Resolución de problemas de red</option>
+                       
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Dettalles de el servicio:</label><br>
+                    <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Cotizar">
+                </div>
+                <input type="hidden" name="form_computadoras" value="1">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mantenimiento de Computadoras JE-Tech</p>
+    </footer>
+</body>
+</html>
