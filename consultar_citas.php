@@ -69,9 +69,9 @@
     <?php
 // Datos de conexión a la base de datos
 $servername = "localhost";
-$username = "id22048793_je";
-$password = "Char1101#";
-$dbname = "id22048793_techje";
+$username = "GG";
+$password = "GG#";
+$dbname = "GG";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -127,4 +127,5 @@ $conn->close();
 
 </body>
 </html>
+
 
