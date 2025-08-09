@@ -2,9 +2,9 @@
 <?php
 // Datos de conexión a la base de datos
 $servername = "localhost";
-$username = "id22048793_je";
-$password = "Char1101#";
-$dbname = "id22048793_techje";
+$username = "GG";
+$password = "GG";
+$dbname = "GG";
 
 
 // Crear conexión
@@ -46,3 +46,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['form_computadoras'])) 
 // Cerrar conexión
 $conn->close();
 ?>
+
